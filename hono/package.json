@@ -1,0 +1,8 @@
+{
+  "name": "hono",
+  "type": "module",
+  "module": "index.ts",
+  "dependencies": {
+    "hono": "^4.10.0"
+  }
+}

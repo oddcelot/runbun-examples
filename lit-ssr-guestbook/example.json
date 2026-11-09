@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Lit SSR guestbook",
+  "description": "Lit server-rendered by Elysia, streamed and hydrated, live over a WebSocket",
+  "kind": "example",
+  "order": 5,
+  "tags": ["Lit", "Elysia", "SQLite"]
+}

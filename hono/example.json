@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Hono",
+  "description": "Routes, params, JSON and middleware in Hono",
+  "kind": "example",
+  "order": 4,
+  "tags": ["Hono"]
+}
