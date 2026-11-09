@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Elysia",
+  "description": "Routes, params and validation in Elysia 1.4",
+  "kind": "example",
+  "order": 2,
+  "tags": ["Elysia"]
+}

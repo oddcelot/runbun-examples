@@ -1,0 +1,11 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Hono",
+  "description": "The Hono starter for Bun",
+  "kind": "example",
+  "order": 10,
+  "tags": [
+    "Hono"
+  ],
+  "repo": "https://github.com/honojs/starter/tree/main/templates/bun"
+}

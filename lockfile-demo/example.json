@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "bun.lock",
+  "description": "Nested node_modules installed from a lockfile",
+  "kind": "example",
+  "order": 7,
+  "tags": []
+}

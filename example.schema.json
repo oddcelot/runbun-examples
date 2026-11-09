@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A project in the runbun.dev gallery",
+  "type": "object",
+  "required": ["name", "description", "kind", "tags"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": { "type": "string", "description": "The card's title, short: \"React\", \"WebSocket chat\"." },
+    "description": { "type": "string", "description": "One line under the name: what the project shows." },
+    "kind": { "enum": ["starter", "example"], "description": "starter: a small project to build on. example: shows a framework or feature." },
+    "order": { "type": "number", "description": "Position within its kind (then by name); lower comes first." },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "The frameworks and libraries it is built on (React, Elysia, SQLite), not Bun's own APIs. The first one with a logo gives the card its icon (else Bun's)."
+    },
+    "repo": {
+      "type": "string",
+      "description": "A public GitHub repo (owner/repo, owner/repo@ref or a github.com URL) to open instead of files here: the folder then holds only this file."
+    }
+  }
+}

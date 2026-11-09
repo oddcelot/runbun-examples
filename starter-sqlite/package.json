@@ -1,0 +1,5 @@
+{
+  "name": "starter-sqlite",
+  "type": "module",
+  "module": "index.ts"
+}

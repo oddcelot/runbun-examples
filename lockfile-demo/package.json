@@ -1,0 +1,9 @@
+{
+  "name": "lockfile-demo",
+  "module": "index.ts",
+  "dependencies": {
+    "string-width": "^7.2.0",
+    "strip-ansi": "^6.0.1",
+    "kleur": "^4.1.0"
+  }
+}

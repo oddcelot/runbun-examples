@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "WebSocket chat",
+  "description": "A chat room over Bun.serve WebSockets and pub/sub",
+  "kind": "starter",
+  "order": 5,
+  "tags": ["WebSocket"]
+}

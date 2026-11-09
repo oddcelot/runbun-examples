@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Confetti demo",
+  "description": "An API route, an HTML import and a package from npm",
+  "kind": "example",
+  "order": 1,
+  "tags": []
+}

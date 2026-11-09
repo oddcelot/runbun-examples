@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bun WebSocket chat</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        max-width: 32rem;
+        margin: 2rem auto;
+      }
+      #log {
+        min-height: 12rem;
+        padding: 0.5rem;
+        border: 1px solid GrayText;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chat</h1>
+    <ul id="log"></ul>
+    <form id="form">
+      <input id="text" autocomplete="off" placeholder="Say something" />
+      <button>Send</button>
+    </form>
+    <script type="module" src="./client.ts"></script>
+  </body>
+</html>

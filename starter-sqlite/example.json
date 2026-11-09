@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "SQLite",
+  "description": "Notes in bun:sqlite, served as JSON",
+  "kind": "starter",
+  "order": 4,
+  "tags": ["SQLite"]
+}

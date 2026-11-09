@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "node:* built-ins",
+  "description": "fs, crypto, events, path, url and util",
+  "kind": "example",
+  "order": 6,
+  "tags": ["Node.js"]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Elysia 2 (rc)",
+  "description": "Plugins, macros, server-sent events and a WebSocket chat",
+  "kind": "example",
+  "order": 3,
+  "tags": ["Elysia", "WebSocket"]
+}

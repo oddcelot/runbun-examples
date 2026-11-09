@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "React",
+  "description": "Bun.serve with an HTML import that bundles a React app",
+  "kind": "starter",
+  "order": 3,
+  "tags": ["React"]
+}

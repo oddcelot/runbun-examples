@@ -1,0 +1,7 @@
+{
+  "name": "elysia2-demo",
+  "module": "index.ts",
+  "dependencies": {
+    "elysia": "2.0.0-rc.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "vite-demo",
+  "module": "index.ts",
+  "dependencies": {
+    "vite": "^8.0.0"
+  }
+}

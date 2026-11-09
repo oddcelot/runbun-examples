@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Blank",
+  "description": "One TypeScript file that logs to the console",
+  "kind": "starter",
+  "order": 1,
+  "tags": []
+}

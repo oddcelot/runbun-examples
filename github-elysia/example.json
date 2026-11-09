@@ -1,0 +1,11 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Elysia",
+  "description": "oddcelot/bun-elysia-demo",
+  "kind": "example",
+  "order": 8,
+  "tags": [
+    "Elysia"
+  ],
+  "repo": "oddcelot/bun-elysia-demo"
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elysia 2 in the browser</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font:
+          15px/1.5 system-ui,
+          sans-serif;
+      }
+      body {
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      section {
+        border: 1px solid #8884;
+        border-radius: 0.5rem;
+        padding: 0.25rem 1rem 1rem;
+        margin-block: 1rem;
+      }
+      pre {
+        background: #8881;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        white-space: pre-wrap;
+        min-height: 1.5em;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Elysia 2</h1>
+    <p>
+      JSON routes: <a href="todos">/todos</a> ·
+      <a href="todos?done=true">/todos?done=true</a> ·
+      <a href="todos/1">/todos/1</a> · <a href="todos/x">/todos/x</a> (422) ·
+      <a href="me">/me</a> (401) · <a href="visits">/visits</a> (cookie) ·
+      <a href="teapot">/teapot</a> (418)
+    </p>
+
+    <section>
+      <h2>Todos (macros, guard, validation)</h2>
+      <form id="add">
+        <select id="token">
+          <option value="bob-token">Bob (user)</option>
+          <option value="ada-token">Ada (admin)</option>
+          <option value="">no token</option>
+        </select>
+        <input id="title" placeholder="Title (empty fails validation)" />
+        <button>Add</button>
+        <button type="button" id="clear">Delete all (admin)</button>
+      </form>
+      <pre id="todos"></pre>
+    </section>
+
+    <section>
+      <h2>Server-sent events</h2>
+      <button id="count">Count to 5</button>
+      <pre id="ticks"></pre>
+    </section>
+
+    <section>
+      <h2>WebSocket chat</h2>
+      <form id="chat">
+        <input id="text" placeholder="Say something" /> <button>Send</button>
+      </form>
+      <pre id="messages"></pre>
+    </section>
+
+    <script type="module">
+      const $ = (id) => document.getElementById(id);
+      const headers = () =>
+        $("token").value ? { authorization: `Bearer ${$("token").value}` } : {};
+      const show = async (res) => `${res.status} ${await res.text()}`;
+      const list = async () =>
+        ($("todos").textContent = await show(await fetch("todos")));
+
+      $("add").onsubmit = async (e) => {
+        e.preventDefault();
+        const res = await fetch("todos", {
+          method: "POST",
+          headers: { ...headers(), "content-type": "application/json" },
+          body: JSON.stringify({ title: $("title").value }),
+        });
+        if (res.ok) list();
+        else $("todos").textContent = await show(res);
+      };
+      $("clear").onclick = async () => {
+        const res = await fetch("todos", {
+          method: "DELETE",
+          headers: headers(),
+        });
+        $("todos").textContent = await show(res);
+      };
+      list();
+
+      $("count").onclick = () => {
+        $("ticks").textContent = "";
+        const events = new EventSource("count");
+        events.addEventListener(
+          "tick",
+          (e) => ($("ticks").textContent += `tick ${JSON.parse(e.data).i}\n`),
+        );
+        events.onerror = () => events.close(); // the stream ends after 5 ticks
+      };
+
+      const ws = new WebSocket(
+        new URL(
+          `chat?name=guest-${Math.floor(Math.random() * 1000)}`,
+          location.href.replace(/^http/, "ws"),
+        ),
+      );
+      ws.onmessage = (e) => {
+        const { from, text } = JSON.parse(e.data);
+        $("messages").textContent += `${from}: ${text}\n`;
+      };
+      $("chat").onsubmit = (e) => {
+        e.preventDefault();
+        ws.send(JSON.stringify({ text: $("text").value }));
+        $("text").value = "";
+      };
+    </script>
+  </body>
+</html>

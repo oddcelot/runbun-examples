@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Vite",
+  "description": "The Vite dev server, with HMR over the preview",
+  "kind": "example",
+  "order": 5,
+  "tags": ["Vite"]
+}

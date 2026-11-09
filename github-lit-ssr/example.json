@@ -1,0 +1,13 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Lit SSR guestbook",
+  "description": "Streamed Lit SSR, bun:sqlite and WebSockets on Elysia",
+  "kind": "example",
+  "order": 9,
+  "tags": [
+    "Lit",
+    "Elysia",
+    "SQLite"
+  ],
+  "repo": "https://github.com/oddcelot/lit-devtools/tree/main/examples/elysia"
+}

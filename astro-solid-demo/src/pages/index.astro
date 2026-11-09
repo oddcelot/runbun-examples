@@ -1,0 +1,44 @@
+---
+import Counter from "../components/Counter.tsx";
+import ServerCard from "../components/ServerCard.tsx";
+import { getCount } from "../lib/count";
+
+// Rendered on each request (server-side rendering), so the count is current.
+export const prerender = false;
+
+const count = getCount();
+const rendered = new Date().toLocaleTimeString();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Astro + Solid</title>
+  </head>
+  <body>
+    <h1>Astro + Solid</h1>
+    <p>Rendered by Astro on the server at {rendered}, running on Bun {Bun.version}.</p>
+    <Counter client:load initial={count} />
+    <ServerCard
+      rows={[
+        ["Count at render", String(count)],
+        ["Rendered at", rendered],
+        ["Runtime", `Bun ${Bun.version}`],
+      ]}
+    />
+    <p><a href="/api/count">GET /api/count</a></p>
+    <!-- Global: scoped styles only reach elements in this file, not the Solid components' markup. -->
+    <style is:global>
+      /* System colors follow color-scheme, so there are no dark-mode rules. */
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui; padding: 1rem; background: Canvas; color: CanvasText; }
+      .counter { display: flex; gap: 0.5rem; align-items: center; }
+      button { font-size: 1.1rem; padding: 0.2rem 0.8rem; background: ButtonFace; color: ButtonText; border: 1px solid ButtonBorder; border-radius: 6px; }
+      .card { margin-top: 1rem; padding: 0.5rem 1rem; border: 1px solid GrayText; border-radius: 8px; max-width: 24rem; background: Field; color: FieldText; }
+      .card dt { color: GrayText; }
+      .card h2 { font-size: 1rem; }
+      .card dl { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 1rem; }
+      .card dd { margin: 0; }
+    </style>
+  </body>
+</html>

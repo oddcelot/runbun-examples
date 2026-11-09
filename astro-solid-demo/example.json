@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Astro + Solid",
+  "description": "The Astro dev server with a hydrated Solid island",
+  "kind": "example",
+  "order": 4,
+  "tags": ["Astro", "Solid"]
+}
