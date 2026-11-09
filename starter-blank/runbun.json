@@ -1,0 +1,5 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  // A program, not a server: the console gets the room, and one file needs no tree.
+  "panels": { "files": false, "preview": false, "console": true }
+}

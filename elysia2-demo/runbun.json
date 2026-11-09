@@ -1,0 +1,14 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  "open": ["index.ts", "src/todos.ts"],
+  "hidden": ["bun.lock"],
+  "preview": {
+    "requests": [
+      "GET /",
+      "GET /info",
+      "GET /todos",
+      "GET /me -H \"Authorization: Bearer ada-token\"",
+      "POST /todos -H \"Authorization: Bearer ada-token\" {\"title\": \"Try Elysia 2\"}"
+    ]
+  }
+}

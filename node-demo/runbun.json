@@ -1,0 +1,4 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  "panels": { "preview": false, "console": true }
+}

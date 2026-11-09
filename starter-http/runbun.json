@@ -1,0 +1,11 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  "panels": { "preview": true, "console": true },
+  "preview": {
+    "requests": [
+      "GET /api/todos",
+      "POST /api/todos {\"title\": \"Write a route\"}",
+      "GET /api/todos/1"
+    ]
+  }
+}
