@@ -1,0 +1,3 @@
+# Bun's page server compiles Solid's JSX with this plugin; the playground's fast path has its own compiler.
+[serve.static]
+plugins = ["./solid-plugin.js"]

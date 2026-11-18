@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Solid 2 (browser only)",
+  "description": "An index.html with a Solid 2 app: no server, JSX compiled in the browser on the fast path",
+  "kind": "starter",
+  "order": 5,
+  "tags": ["Solid"]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "React (browser only)",
+  "description": "An index.html with a React app: no server, no install on the fast path",
+  "kind": "starter",
+  "order": 4,
+  "tags": ["React"]
+}
