@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFile } from "node:fs/promises";
 import { transformAsync } from "@babel/core";
 import solid from "@solidjs/babel-plugin";
 
