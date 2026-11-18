@@ -1,0 +1,15 @@
+{
+  "name": "starter-solid-browser",
+  "type": "module",
+  "scripts": {
+    "dev": "bun ./index.html"
+  },
+  "dependencies": {
+    "@solidjs/web": "^2.0.1",
+    "solid-js": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@solidjs/babel-plugin": "^2.0.1"
+  }
+}

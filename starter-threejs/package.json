@@ -1,0 +1,13 @@
+{
+  "name": "starter-threejs",
+  "type": "module",
+  "scripts": {
+    "dev": "bun ./index.html"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0"
+  }
+}
