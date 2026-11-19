@@ -6,11 +6,11 @@
     "dev": "bun index.ts"
   },
   "dependencies": {
-    "@solidjs/web": "^2.0.0",
-    "solid-js": "^2.0.0"
+    "@solidjs/web": "^2.0.3",
+    "solid-js": "^2.0.3"
   },
   "devDependencies": {
     "@solidjs/vite-plugin": "^3.0.1",
-    "vite": "^8.0.0"
+    "vite": "^8.3.8"
   }
 }
