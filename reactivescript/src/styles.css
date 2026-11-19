@@ -1,0 +1,70 @@
+:root {
+  --accent: #2c4f7c;
+  font-family: system-ui, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  gap: 0.75rem;
+  width: min(20rem, 90vw);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+
+  &.quiet {
+    background: none;
+    color: inherit;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    width: 4rem;
+    font: inherit;
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.note {
+  margin: 0;
+  opacity: 0.7;
+}

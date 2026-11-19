@@ -1,0 +1,50 @@
+// `source` is state: the only kind of name that is written, with `:=`.
+// A plain `=` is an equation: always true, recomputed when what it reads changes.
+// Writes happen in a handler or an `action`, never in an equation.
+
+component Stat(props: { label: string; value: number }) {
+  <p class="stat">
+    <span>{props.label}</span>
+    <strong>{props.value}</strong>
+  </p>
+}
+
+export default component App() {
+  source count := 0
+  source step := 1
+  doubled = count * 2
+  parity = count % 2 === 0 ? "even" : "odd"
+
+  action add() {
+    count := count + step
+  }
+  action reset() {
+    count := 0
+  }
+
+  <main>
+    <h1>ReactiveScript</h1>
+    <div class="row">
+      <button onClick={add}>Add {step}</button>
+      <button class="quiet" onClick={reset} disabled={count === 0}>
+        Reset
+      </button>
+    </div>
+    <label>
+      Step
+      <input
+        type="number"
+        min="1"
+        value={step}
+        onInput={e => {
+          step := e.currentTarget.valueAsNumber || 1
+        }}
+      />
+    </label>
+    <Stat label="count" value={count} />
+    <Stat label="doubled" value={doubled} />
+    <p class="note">
+      {count} is {parity}
+    </p>
+  </main>
+}

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  // The Vite dev server compiles the .rx files, so never the fast path.
+  "fastPath": false
+}

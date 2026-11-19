@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "ReactiveScript",
+  "description": "A .rx app: Solid's reactivity as a language, checked as you type",
+  "kind": "example",
+  "order": 6.5,
+  "tags": ["Solid", "Vite"]
+}
