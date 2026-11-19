@@ -3,8 +3,8 @@
   "type": "module",
   "module": "index.ts",
   "dependencies": {
-    "@astrojs/solid-js": "^7.1.1",
-    "astro": "^7.4.2",
-    "solid-js": "^1.9.17"
+    "@astrojs/solid-js": "^7.1.6",
+    "astro": "^7.4.13",
+    "solid-js": "^1.9.20"
   }
 }

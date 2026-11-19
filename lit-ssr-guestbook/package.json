@@ -19,7 +19,7 @@
     "lit": "^3.3.3"
   },
   "devDependencies": {
-    "@oddsquad/lit-devtools": "^0.27.0",
+    "@oddsquad/lit-devtools": "^0.28.0",
     "@types/bun": "^1.3.0",
     "typescript": "^7.0.2"
   }
