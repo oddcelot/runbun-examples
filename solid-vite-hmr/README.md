@@ -28,12 +28,13 @@ bun dev
 
 ## Files
 
-| File                               | What it is                        |
-| ---------------------------------- | --------------------------------- |
-| `index.ts`                         | Starts the Vite dev server        |
-| `vite.config.ts`                   | The Solid plugin                  |
-| `index.html`                       | The page; loads `src/main.tsx`    |
-| `src/main.tsx`                     | Renders `App` into the page       |
-| `src/App.tsx`                      | Owns the state, lays out the page |
-| `src/Counter.tsx`, `src/Notes.tsx` | The components to edit            |
-| `src/styles.css`                   | Styles, also replaced in place    |
+| File                               | What it is                                                                     |
+| ---------------------------------- | ------------------------------------------------------------------------------ |
+| `index.ts`                         | Starts the Vite dev server                                                     |
+| `vite.config.ts`                   | The Solid plugin                                                               |
+| `runbun.json`                      | On runbun.dev: keeps the project off the fast path, which starts no dev server |
+| `index.html`                       | The page; loads `src/main.tsx`                                                 |
+| `src/main.tsx`                     | Renders `App` into the page                                                    |
+| `src/App.tsx`                      | Owns the state, lays out the page                                              |
+| `src/Counter.tsx`, `src/Notes.tsx` | The components to edit                                                         |
+| `src/styles.css`                   | Styles, also replaced in place                                                 |
