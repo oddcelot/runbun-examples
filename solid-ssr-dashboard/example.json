@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Solid 2 SSR dashboard",
+  "description": "Solid 2 streamed from Bun.serve and hydrated: async panels, an optimistic action, bun:sqlite",
+  "kind": "example",
+  "order": 6,
+  "tags": ["Solid", "SQLite"]
+}

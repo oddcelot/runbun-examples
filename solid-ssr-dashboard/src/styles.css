@@ -1,0 +1,275 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  --line: light-dark(#d5dbe1, #38424c);
+  --accent: light-dark(#2f7ab8, #6cb8f0);
+  --server: light-dark(#8a5a00, #f0c060);
+  --browser: light-dark(#1f7a4d, #6fd3a0);
+  /* The page doesn't move sideways when it gets long enough to scroll. */
+  scrollbar-gutter: stable;
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+
+  h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: auto;
+  }
+
+  nav a {
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    color: inherit;
+    text-decoration: none;
+
+    &[aria-current] {
+      background: var(--accent);
+      color: light-dark(#fff, #10202d);
+    }
+  }
+}
+
+.badge {
+  display: inline-grid;
+  justify-items: center;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--server);
+  border-radius: 999px;
+  color: var(--server);
+  font-size: 0.8rem;
+
+  /* Both labels in one cell: the one that doesn't apply keeps its room. */
+  span {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+  }
+
+  &:not(.on) span:last-child,
+  &.on span:first-child {
+    visibility: hidden;
+  }
+
+  &.on {
+    border-color: var(--browser);
+    color: var(--browser);
+  }
+}
+
+.intro {
+  max-width: 44rem;
+  margin: 0.75rem 0 1rem;
+  opacity: 0.8;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  /* A fixed height, for the placeholder and for the content. */
+  box-sizing: border-box;
+  height: 11.5rem;
+  padding: 0.85rem;
+  overflow: hidden;
+
+  &.tall {
+    height: 19rem;
+  }
+
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+
+  h2 {
+    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* Who asked for the panel's data. */
+  footer {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-size: 0.8rem;
+
+    &::before {
+      content: "● ";
+    }
+
+    &.server {
+      color: var(--server);
+    }
+
+    &.browser {
+      color: var(--browser);
+    }
+  }
+}
+
+/* The placeholder: a bar that fills for as long as the query takes. */
+.loading {
+  margin: 0;
+  opacity: 0.7;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    background: var(--accent);
+    transform-origin: left;
+    animation: fill var(--takes) linear both;
+  }
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.stale {
+  opacity: 0.4;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr;
+  gap: 0.5rem;
+  margin: 0;
+
+  dt {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.3rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    flex: 1;
+    min-height: 2px;
+    border-radius: 2px 2px 0 0;
+    background: var(--accent);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+
+  th,
+  td {
+    height: 1.7rem;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  th {
+    font-weight: normal;
+    text-align: left;
+  }
+
+  td {
+    text-align: right;
+  }
+}
+
+form {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+
+  select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  input {
+    width: 3.5rem;
+  }
+}
+
+.orders {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.1rem;
+    white-space: nowrap;
+
+    /* Written by an action, not confirmed by the server yet. */
+    &.saving {
+      color: var(--browser);
+    }
+
+    /* The name gives way (to "saving…"), the total and the button stay put. */
+    span:first-child {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .total {
+      width: 4.5rem;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    button {
+      width: 5rem;
+      padding-block: 0.1rem;
+    }
+  }
+}
+
+select,
+input,
+button {
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+}
