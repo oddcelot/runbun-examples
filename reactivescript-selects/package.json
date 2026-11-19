@@ -1,0 +1,19 @@
+{
+  "name": "reactivescript-selects",
+  "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "dev": "bun index.ts"
+  },
+  "dependencies": {
+    "@reactivescript/runtime": "^0.3.1",
+    "@solidjs/signals": "^2.0.3",
+    "@solidjs/web": "^2.0.3",
+    "solid-js": "^2.0.3"
+  },
+  "devDependencies": {
+    "@reactivescript/compiler": "^0.3.1",
+    "@solidjs/vite-plugin": "^3.0.1",
+    "vite": "^8.3.8"
+  }
+}
