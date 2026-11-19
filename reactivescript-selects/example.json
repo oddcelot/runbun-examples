@@ -1,0 +1,8 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "ReactiveScript: cascading selects",
+  "description": "Country, state and city selects, each loaded from the one above, in .rx",
+  "kind": "example",
+  "order": 6.6,
+  "tags": ["Solid", "Vite"]
+}

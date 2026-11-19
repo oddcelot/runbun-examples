@@ -1,0 +1,81 @@
+// Three selects, each one's options loaded from the one above it.
+// `x = await f(y)` is a question, asked again whenever `y` changes.
+// `source x = e` is a selection the user writes with `:=`, reset to `e` whenever `e` changes.
+
+import pure { getCountries, getStates, getCities } from "./api"
+
+// A generic component: it knows nothing of how it is used.
+component Select(props: {
+  value: string
+  options: string[]
+  placeholder?: string
+  onChange: (value: string) => void
+}) {
+  <div>
+    <select
+      value={props.value}
+      disabled={props.options.length === 0 || pending? props.options}
+      onChange={e => {
+        props.onChange(e.currentTarget.value)
+      }}
+    >
+      {if props.value === "" && props.placeholder !== undefined {
+        <option value="">{props.placeholder}</option>
+      }}
+      {for option in props.options {
+        <option value={option}>{option}</option>
+      }}
+    </select>
+  </div>
+}
+
+// No state is chosen when the country changes: the reset is to "" whatever the new states are.
+fn unchosen(_options: string[]): string => ""
+
+export default component App() {
+  countries = await getCountries()
+  source country = countries[0]
+  states = await getStates(country)
+  source state = unchosen(states)
+  cities = state === "" ? [] : await getCities(state)
+  source city = cities[0] ?? ""
+
+  <main>
+    <h1>Cascading selects</h1>
+    {errored fallback(e) {
+      <p class="note">Failed: {e.message}</p>
+    } {
+      loading fallback {
+        <p class="note">Loading…</p>
+      } {
+        <Select
+          value={country}
+          options={countries}
+          onChange={v => {
+            country := v
+          }}
+        />
+        <Select
+          value={state}
+          options={states}
+          placeholder="- Select a State/Province -"
+          onChange={v => {
+            state := v
+          }}
+        />
+        <Select
+          value={city}
+          options={cities}
+          placeholder="- Select a City -"
+          onChange={v => {
+            city := v
+          }}
+        />
+        <p>
+          Selection:{" "}
+          {city === "" ? "select above…" : `${city}, ${state} - ${country}`}
+        </p>
+      }
+    }}
+  </main>
+}
