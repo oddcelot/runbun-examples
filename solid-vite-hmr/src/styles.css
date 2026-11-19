@@ -1,0 +1,120 @@
+:root {
+  /* Try it: change the accent and save. */
+  --accent: light-dark(#2c4f7c, #8fb8ee);
+  --surface: light-dark(#fff, #1b1d22);
+  --line: light-dark(#d9dce3, #33363e);
+  --muted: light-dark(#5b6170, #a0a6b4);
+  color-scheme: light dark;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: light-dark(#f4f5f8, #121317);
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  code {
+    padding: 0.1em 0.3em;
+    border-radius: 0.25rem;
+    background: var(--line);
+    font-size: 0.9em;
+  }
+}
+
+.loaded {
+  margin: 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.steps {
+  padding-left: 1.25rem;
+  color: var(--muted);
+
+  li + li {
+    margin-top: 0.25rem;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--surface);
+
+  h2 {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  output {
+    display: block;
+    color: var(--accent);
+    font-size: 3rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+  }
+
+  form {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+
+  button {
+    padding: 0.4rem 0.9rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--accent);
+    color: var(--surface);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
