@@ -29,6 +29,8 @@ The playground bakes this repo in when it is built, so a merged change shows up 
      Bun.serve. The gallery filters by them, and the first one it has a logo for becomes the card's icon. A tag without
      a logo shows without one; say in the pull request if it needs one.
    - `order` (optional): where it sits among its kind, lower first.
+   - `languages` (optional): the playground's language packs it needs, such as `["reactivescript"]` for `.rx`
+     files. A self-hosted playground can leave a pack out, and then shows no card for the project.
    - `repo` (instead of files): a public GitHub repo to open, for a project that lives elsewhere. The folder then holds
      only `example.json`. The playground fetches it when picked, so it counts against GitHub's rate limit.
 4. Check it: `bun scripts/check.ts <folder>` validates `example.json`, checks that `bun fmt` leaves the files as they

@@ -7,14 +7,16 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
-type Meta = { name: string; description: string; kind: "starter" | "example"; order?: number; tags: string[]; repo?: string };
+type Meta = { name: string; description: string; kind: "starter" | "example"; order?: number; tags: string[]; repo?: string; languages?: string[] };
 
 const root = join(import.meta.dir, "..");
 const write = process.argv.includes("--write");
 const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 /** How long a server must stay up to count as started. */
 const UP_FOR = 6000;
-const KEYS = new Set(["$schema", "name", "description", "kind", "order", "tags", "repo"]);
+const KEYS = new Set(["$schema", "name", "description", "kind", "order", "tags", "repo", "languages"]);
+/** The language packs of runbun's playground (its src/languages) a project may need. */
+const LANGUAGES = new Set(["reactivescript"]);
 
 const folders = readdirSync(root)
   .filter((d) => existsSync(join(root, d, "example.json")) && statSync(join(root, d)).isDirectory())
@@ -42,6 +44,8 @@ function checkMeta(dir: string): Meta | undefined {
   if (m.order !== undefined && typeof m.order !== "number") bad.push("order must be a number");
   if (!Array.isArray(m.tags) || m.tags.some((t) => typeof t !== "string")) bad.push("tags must be a list of strings");
   if (m.repo !== undefined && typeof m.repo !== "string") bad.push("repo must be a string");
+  if (m.languages !== undefined && (!Array.isArray(m.languages) || m.languages.some((l) => !LANGUAGES.has(l))))
+    bad.push(`languages must be a list of: ${[...LANGUAGES].join(", ")}`);
   const hasPkg = existsSync(join(root, dir, "package.json"));
   if (!m.repo && !hasPkg) bad.push("a project needs a package.json (or a repo to open instead)");
   if (m.repo && readdirSync(join(root, dir)).length > 1) bad.push("a repo entry holds only example.json");

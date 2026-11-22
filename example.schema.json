@@ -16,6 +16,12 @@
       "uniqueItems": true,
       "description": "The frameworks and libraries it is built on (React, Elysia, SQLite), not Bun's own APIs. The first one with a logo gives the card its icon (else Bun's)."
     },
+    "languages": {
+      "type": "array",
+      "items": { "enum": ["reactivescript"] },
+      "uniqueItems": true,
+      "description": "The language packs of runbun's playground it needs (its src/languages): a host that leaves one out shows no card for it."
+    },
     "repo": {
       "type": "string",
       "description": "A public GitHub repo (owner/repo, owner/repo@ref or a github.com URL) to open instead of files here: the folder then holds only this file."
