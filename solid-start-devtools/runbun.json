@@ -1,0 +1,5 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  // Start mode renders on the server and answers server functions: the Vite dev server must run, so never the fast path.
+  "fastPath": false
+}
