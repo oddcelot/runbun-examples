@@ -1,3 +1,4 @@
+import { DevToolbar } from "@solidjs/start-devtools";
 import { hydrate } from "@solidjs/web";
 import { ApiContext, apiOf, rangeOf } from "./api.ts";
 import { App } from "./App.tsx";
@@ -25,7 +26,9 @@ const api = apiOf(
 hydrate(
   () => (
     <ApiContext value={api}>
-      <App days={rangeOf(location.href)} />
+      <DevToolbar>
+        <App days={rangeOf(location.href)} />
+      </DevToolbar>
     </ApiContext>
   ),
   document,

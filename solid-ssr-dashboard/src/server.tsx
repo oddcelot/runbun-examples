@@ -1,3 +1,4 @@
+import { DevToolbar } from "@solidjs/start-devtools";
 import { renderToStream } from "@solidjs/web";
 import { solid } from "../solid-plugin.ts";
 import { ApiContext, apiOf, rangeOf } from "./api.ts";
@@ -13,7 +14,10 @@ const server = Bun.serve({
     "/": (request) => {
       const stream = renderToStream(() => (
         <ApiContext value={api}>
-          <App days={rangeOf(request.url)} />
+          {/* Solid's devtools dock. It is on both sides, so the markup matches when the page hydrates. */}
+          <DevToolbar>
+            <App days={rangeOf(request.url)} />
+          </DevToolbar>
         </ApiContext>
       ));
       const { readable, writable } = new TransformStream<Uint8Array>();
@@ -32,6 +36,8 @@ const server = Bun.serve({
       const build = await Bun.build({
         entrypoints: [`${import.meta.dir}/client.tsx`],
         target: "browser",
+        // Solid's development build, which the devtools read; without it the dock has nothing to show.
+        conditions: ["development"],
         plugins: [solid("dom")],
       });
       return new Response(build.outputs[0]);

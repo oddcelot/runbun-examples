@@ -28,6 +28,8 @@ bun dev
 - `@solidjs/vite-plugin` finds `@reactivescript/compiler` in the project and compiles `.rx` files with it.
 - `import pure { … } from "./api"` declares loaders: functions the app calls with the reactive values it reads. The
   compiled module asks the app for them by name; `src/main.ts` hands them over with `createApp({ api })`.
+- Solid's devtools are the dock at the bottom of the page (the grip at its center, or Alt+Shift+D): the components, the signals and memos the equations
+  compile to, and what a change re-ran. `src/main.ts` wraps the app in `DevToolbar` from `@solidjs/start-devtools`.
 - The language is experimental and follows Solid 2: expect it to change.
 
 ## Files

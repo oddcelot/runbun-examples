@@ -25,6 +25,8 @@ bun dev
   code a Solid component compiles to. Nothing else in `vite.config.ts` is there for it.
 - `@reactivescript/runtime` is the small layer the compiled code calls: `createApp` in `src/main.ts` mounts the default
   component of `src/app.rx`.
+- Solid's devtools are the dock at the bottom of the page (the grip at its center, or Alt+Shift+D): the components, the signals and memos the equations
+  compile to, and what a change re-ran. `src/main.ts` wraps the app in `DevToolbar` from `@solidjs/start-devtools`.
 - The language is experimental and follows Solid 2: expect it to change.
 
 ## Files
