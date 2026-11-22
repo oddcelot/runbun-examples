@@ -39,6 +39,11 @@ a note from Solid's development build, not an error.
 The components ask an `Api` from context and don't know where they run: on the server it is the database
 (`src/db.ts`), in the page it is `fetch` to the server's JSON routes (`src/client.tsx`).
 
+Solid's devtools are the dock at the bottom of the page (the grip at its center, or Alt+Shift+D): the components, the
+async loads of each panel, and what an action re-ran. `DevToolbar` from `@solidjs/start-devtools` wraps `App` on both
+sides, so that the markup matches when the page hydrates. The devtools read Solid's development build, so the server
+runs with `--conditions development` (the `dev` script) and `Bun.build` gets `conditions: ["development"]`.
+
 ## Files
 
 | File              | What it is                                                                        |

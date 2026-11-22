@@ -25,6 +25,8 @@ bun dev
 - State survives when it lives above the component you edit. Here `App.tsx` owns the count and the notes and hands
   them down as props, so `Counter.tsx` and `Notes.tsx` can be replaced freely. Editing `App.tsx` replaces `App`, and
   with it the state it owns.
+- Solid's devtools are the dock at the bottom of the page (the grip at its center, or Alt+Shift+D): the component tree, the signals and memos, and what a click re-ran. `src/main.tsx` wraps `App` in
+  `DevToolbar` from `@solidjs/start-devtools` for it.
 
 ## Files
 
