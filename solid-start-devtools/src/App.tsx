@@ -39,7 +39,8 @@ export default function App() {
         <h1>Solid Start + devtools</h1>
         <p class="hint">
           Open Solid's devtools with the grip at the bottom, or{" "}
-          <kbd>Alt+Shift+D</kbd>.
+          <kbd>Alt+Shift+D</kbd>. In the runbun playground they are the Devtools
+          tab under the preview.
         </p>
       </header>
 

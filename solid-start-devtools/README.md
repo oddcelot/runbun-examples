@@ -11,7 +11,8 @@ bun dev
 
 ## Try it
 
-Open the dock with the grip at the bottom center, or with Alt+Shift+D. It has three views.
+Open the dock with the grip at the bottom center, or with Alt+Shift+D. In the runbun playground it is the Devtools tab
+under the preview instead, always open. It has three views.
 
 1. **Activity**: reload the page and find the `listOrders` call and the load it started. Click "Ship it" or "Add
    order": each is an action, with its server call, the write and the memos that re-ran because of it.

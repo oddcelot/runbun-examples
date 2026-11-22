@@ -1,7 +1,7 @@
 {
   "$schema": "../example.schema.json",
   "name": "Solid Start + devtools",
-  "description": "Start mode: server rendering, a server function, and Solid's devtools dock (Alt+Shift+D)",
+  "description": "Start mode: server rendering, a server function, and Solid's devtools in a tab of their own (Alt+Shift+D)",
   "kind": "example",
   "order": 6.4,
   "tags": ["Solid", "Vite"]
