@@ -1,0 +1,5 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  // The Vite dev server must run for hot module replacement, so never the fast path.
+  "fastPath": false
+}
