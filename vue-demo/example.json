@@ -1,0 +1,7 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Vue + Pinia + DevTools",
+  "description": "A todo list with a Pinia store, computed and watch, and Vue DevTools",
+  "kind": "example",
+  "tags": ["Vue", "Pinia", "Vite"]
+}

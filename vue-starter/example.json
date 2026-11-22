@@ -1,0 +1,7 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Vue",
+  "description": "Vue 3 and Vite: edit a component and it swaps in place, state kept",
+  "kind": "starter",
+  "tags": ["Vue", "Vite"]
+}
