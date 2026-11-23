@@ -1,0 +1,7 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "Nuxt + DevTools",
+  "description": "File-based pages, an auto-imported composable over useState, and Nuxt DevTools",
+  "kind": "example",
+  "tags": ["Nuxt", "Vue"]
+}
