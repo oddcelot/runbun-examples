@@ -1,0 +1,15 @@
+{
+  "name": "nuxt-demo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev --no-fork"
+  },
+  "dependencies": {
+    "nuxt": "^4.6.4",
+    "vue": "^3.5.46"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4"
+  }
+}

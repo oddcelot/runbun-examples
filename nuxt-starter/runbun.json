@@ -1,0 +1,6 @@
+{
+  "$schema": "https://runbun.dev/schema/runbun.json",
+  // Nuxt's dev server must run, so never the fast path.
+  "fastPath": false,
+  "open": ["app/app.vue"]
+}
