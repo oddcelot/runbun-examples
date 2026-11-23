@@ -1,0 +1,7 @@
+{
+  "$schema": "../example.schema.json",
+  "name": "three.js",
+  "description": "A spinning cube drawn with three.js on a canvas: no server, no install on the fast path",
+  "kind": "example",
+  "tags": ["three.js"]
+}
