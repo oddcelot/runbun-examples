@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     // There the project, its terminal and the browser are one sandbox: no token to paste before the devtools write
     // files. Remove this where the dev server is reachable by others.
     disableAuthorization: true,
+    // No anonymous usage statistics (the welcome page's checkbox, which the playground skips).
+    telemetry: false,
   },
   telemetry: false,
 });
